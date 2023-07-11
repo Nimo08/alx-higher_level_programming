@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-for i in range(1, 90):
-    if (i == 90 - 1):
-        print("{:02d}".format(i), end=" \n")
-    else:
-        print("{:02d}".format(i), end=", ")
+for i in range(0, 10):
+    for j in range(i + 1, 10):
+        if not (i == 8 and j == 9):
+            print("{:d}{:d}".format(i, j), end=", ")
+print("{:d}{:d}".format(8, 9))
