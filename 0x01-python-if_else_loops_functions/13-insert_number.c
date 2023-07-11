@@ -23,12 +23,15 @@ listint_t *insert_node(listint_t **head, int number)
 		prev = ptr;
 		ptr = ptr->next;
 	}
-	if (prev == NULL)
+	if (*head == ptr)
 	{
 		*head = temp;
 		temp->next = ptr;
 	}
-	prev->next = temp;
-	temp->next = ptr;
+	else if (ptr == NULL || ptr->n != number)
+	{
+		prev->next = temp;
+		temp->next = ptr;
+	}
 	return (ptr);
 }
