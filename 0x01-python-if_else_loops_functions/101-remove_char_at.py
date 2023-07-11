@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 def remove_char_at(str, n):
-    x = str[:n]
-    y = str[n + 1:]
-    return x + y
+    if n < 0 or n >= len(str):
+        return str
+    else:
+        x = str[:n]
+        y = str[n + 1:]
+        return x + y
