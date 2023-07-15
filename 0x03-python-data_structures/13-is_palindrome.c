@@ -22,20 +22,9 @@ int is_palindrome(listint_t **head)
 	{
 		first = first->next;
 		last = last->next;
-	}
-	while (last != *head)
-	{
 		ptr = *head;
-		while (ptr->next != last)
-		{
-			ptr = ptr->next;
-		}
-		if (ptr->n != last->n)
-		{
-			return (1);
-		}
 		last = ptr;
 		*head = (*head)->next;
 	}
-	return (0);
+	return (1);
 }
