@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    if my_string is None:
+    if not my_string:
         return None
     else:
         for i in my_string:
