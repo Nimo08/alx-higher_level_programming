@@ -24,10 +24,7 @@ int is_palindrome(listint_t **head)
 	while (ptr->next != NULL)
 	{
 		ptr = ptr->next;
-		if (ptr != temp)
-		{
-			return (1);
-		}
 	}
+	ptr->next = temp;
 	return (1);
 }
