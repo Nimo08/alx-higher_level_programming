@@ -21,7 +21,7 @@ int is_palindrome(listint_t **head)
 	{
 		return (0);
 	}
-	while (ptr != NULL)
+	while (ptr->next != NULL)
 	{
 		ptr = ptr->next;
 		if (ptr != temp)
