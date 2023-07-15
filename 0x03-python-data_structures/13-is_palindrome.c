@@ -9,10 +9,9 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *ptr;
-	listint_t *temp;
+	int cnt = 0;
 
 	ptr = *head;
-	temp = NULL;
 	if (head == NULL || *head == NULL)
 	{
 		return (1);
@@ -20,10 +19,11 @@ int is_palindrome(listint_t **head)
 	while (ptr->next != NULL)
 	{
 		ptr = ptr->next;
-		if (ptr == temp)
+		cnt++;
+		if (cnt % 2 == 0)
 		{
-			return (0);
+			return (1);
 		}
 	}
-	return (1);
+	return (0);
 }
