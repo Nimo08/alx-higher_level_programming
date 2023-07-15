@@ -22,14 +22,14 @@ int is_palindrome(listint_t **head)
 	{
 		ptr = ptr->next;
 		cnt++;
-		if (cnt == 1)
-		{
-			return (1);
-		}
 		if (ptr == temp)
 		{
 			return (1);
 		}
+	}
+	if (cnt == 1)
+	{
+		return (1);
 	}
 	return (0);
 }
