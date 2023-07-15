@@ -13,6 +13,10 @@ int is_palindrome(listint_t **head)
 
 	temp = NULL;
 	ptr = malloc(sizeof(listint_t));
+	if (ptr == NULL)
+	{
+		return (0);
+	}
 	if (*head == NULL)
 	{
 		return (0);
@@ -24,7 +28,6 @@ int is_palindrome(listint_t **head)
 	while (ptr != NULL)
 	{
 		ptr = ptr->next;
-		temp = ptr;
 	}
 	return (1);
 }
