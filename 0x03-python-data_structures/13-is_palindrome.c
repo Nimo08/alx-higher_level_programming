@@ -24,12 +24,10 @@ int is_palindrome(listint_t **head)
 	while (ptr != NULL)
 	{
 		ptr = ptr->next;
-		if (ptr == temp)
+		if (ptr != temp)
 		{
-			return (0);
-		}
-		else
 			return (1);
+		}
 	}
 	return (1);
 }
