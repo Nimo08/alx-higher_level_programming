@@ -12,6 +12,10 @@ int is_palindrome(listint_t **head)
 	int cnt = 0;
 
 	ptr = *head;
+	if (head == NULL)
+	{
+		return (0);
+	}
 	if (*head == NULL)
 	{
 		return (1);
