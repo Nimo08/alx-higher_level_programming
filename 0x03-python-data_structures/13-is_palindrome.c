@@ -9,21 +9,21 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *ptr;
-	int cnt = 0;
+	listint_t *temp;
 
 	ptr = *head;
+	temp = NULL;
 	if (head == NULL || *head == NULL)
 	{
 		return (1);
 	}
-	while (ptr != NULL)
+	while (ptr->next != NULL)
 	{
 		ptr = ptr->next;
-		cnt++;
+		if (ptr == temp)
+		{
+			return (0);
+		}
 	}
-	if (cnt % 2 == 0)
-	{
-		return (1);
-	}
-	return (0);
+	return (1);
 }
