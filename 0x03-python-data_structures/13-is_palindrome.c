@@ -10,6 +10,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *ptr;
 	listint_t *temp;
+	int cnt = 0;
 
 	ptr = *head;
 	temp = NULL;
@@ -20,6 +21,11 @@ int is_palindrome(listint_t **head)
 	while (ptr != NULL)
 	{
 		ptr = ptr->next;
+		cnt++;
+		if (cnt % 2 == 0)
+		{
+			return (1);
+		}
 		if (ptr == temp)
 		{
 			return (1);
