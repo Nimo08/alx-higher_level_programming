@@ -18,4 +18,5 @@ void print_python_list_info(PyObject *p)
 	{
 		obj = PyList_GetItem(p, i);
 		print("Element: %ld: %s\n", i, PY_TYPE(obj)->tp_name);
+	}
 }
