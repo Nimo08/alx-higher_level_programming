@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def print_sorted_dictionary(a_dictionary):
     for key, value in sorted(a_dictionary.items()):
-        print(f"{key} : {value}")
+        print(f"{key} : {value}".format(key, value))
