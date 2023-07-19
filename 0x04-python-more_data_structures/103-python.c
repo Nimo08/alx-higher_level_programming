@@ -49,9 +49,9 @@ void print_python_list(PyObject *p)
 	{
 		q = PyList_GET_ITEM(p, i);
 		printf("Element %lu: %s\n", i, q->ob_type->tp_name);
-		if (PyBytes_CheckExact(p))
+		if (PyBytes_CheckExact(q))
 		{
-			print_python_bytes(p);
+			print_python_bytes(q);
 		}
 	}
 }
