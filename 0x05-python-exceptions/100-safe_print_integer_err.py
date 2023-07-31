@@ -9,4 +9,4 @@ def safe_print_integer_err(value):
     except ValueError:
         sys.stderr.write("Exception: Unknown format code 'd'")
         sys.stderr.write("for object of type 'str'\n")
-    return False
+        return False
