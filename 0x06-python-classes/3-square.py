@@ -14,7 +14,7 @@ class Square:
         """This function performs the instantiation of private instance
         attribute: size."""
         try:
-            self._size = size
+            self.__size = size
             if not isinstance(size, int):
                 raise TypeError("size must be an integer")
             if size < 0:
@@ -27,4 +27,4 @@ class Square:
     def area(self):
         """This function calculates the area of the square
         using the private attribute: size."""
-        return self._size * self._size
+        return self.__size * self.__size
