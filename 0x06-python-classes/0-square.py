@@ -1,14 +1,13 @@
 #!/usr/bin/python3
 """
-This class represents a square.
-Attributes:
-    None
-Methods:
-    None
-Usage:
-    my_square = Square()
+Square module
+This module illustrates the use of the Square class
+defined in the 0-square module.
+It creates the Square object, prints the square type
+and displays its dictionary representation.
 """
 
 
 class Square:
+    """ This class is intentionally left blank."""
     pass
