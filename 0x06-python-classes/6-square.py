@@ -15,6 +15,19 @@ class Square:
     """This class defines a square using private instance attribute: size."""
     def __init__(self, size=0, position=(0, 0)):
         """Initiliaze square with a size and position."""
+        if not isinstance(position, tuple):
+            raise TypeError("position must be a tuple of 2\
+                        positive integers")
+        if not isinstance(position[0], int) or\
+                not isinstance(position[1], int):
+            raise TypeError("position must be a tuple of 2\
+                        positive integers")
+        if len(position) != 2:
+            raise TypeError("position must be a tuple of 2\
+                        positive integers")
+        if position[0] < 0 or position[1] < 0:
+            raise TypeError("position must be a tuple of 2\
+                        positive integers")
         self.__size = size
         self.__position = position
 
