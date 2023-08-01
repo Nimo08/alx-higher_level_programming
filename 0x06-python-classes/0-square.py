@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 """
-Square class
-This class is intentionally left blank.
+This class represents a square.
+Attributes:
+    None
+Methods:
+    None
+Usage:
+    square = Square()
 """
 
 
