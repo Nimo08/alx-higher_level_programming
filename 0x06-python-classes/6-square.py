@@ -16,19 +16,18 @@ position to print # to stdout.
 class Square:
     """This class defines a square using private instance attribute: size."""
     def __init__(self, size=0, position=(0, 0)):
-        """This function performs the instantiation of
-        private instance attribute: size."""
+        """Initiliaze square with a size and position."""
         self.__size = size
         self.__position = position
 
     @property
     def size(self):
-        """This function retrieves the private instance attribute: size."""
+        """Retrieves the private instance attribute: size."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """This function sets the private instance attribute:
+        """Sets the private instance attribute:
             size to a different value."""
         try:
             self.__size = value
@@ -43,38 +42,33 @@ class Square:
 
     @property
     def position(self):
-        """This function retrieves the private instance attribute: position."""
+        """Retrieves the private instance attribute: position."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """This function sets the private instance attribute: size
+        """Sets the private instance attribute: size
         to a different value."""
-        try:
-            if not isinstance(value, tuple):
-                raise TypeError("position must be a tuple of 2\
+        if not isinstance(value, tuple):
+            raise TypeError("position must be a tuple of 2\
                         positive integers")
-            if not isinstance(value[0], int) or not isinstance(value[1], int):
-                raise TypeError("position must be a tuple of 2\
+        if not isinstance(value[0], int) or not isinstance(value[1], int):
+            raise TypeError("position must be a tuple of 2\
                         positive integers")
-            if len(value) != 2:
-                raise TypeError("position must be a tuple of 2\
+        if len(value) != 2:
+            raise TypeError("position must be a tuple of 2\
                         positive integers")
-            if value[0] < 0 or value[1] < 0:
-                raise TypeError("position must be a tuple of 2\
+        if value[0] < 0 or value[1] < 0:
+            raise TypeError("position must be a tuple of 2\
                         positive integers")
-            self.__position = value
-        except TypeError:
-            raise
+        self.__position = value
 
     def area(self):
-        """This function calculates the area of the square
-        using private instance attribute: size."""
+        """Calculates the area of the square."""
         return self.__size * self.__size
 
     def my_print(self):
-        """This function prints to the stdout, a square
-        made of #."""
+        """Prints to the stdout, a square made of #."""
         if self.__size == 0:
             print("")
             return
