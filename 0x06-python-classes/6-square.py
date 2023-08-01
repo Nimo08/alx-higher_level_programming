@@ -2,13 +2,11 @@
 """
 This module illustrates the use of the Square class
 defined in the 6-square module.
-It calculates and displays the area of the square
-using the private instance attribute: size
-It retrieves the private instance attribute: size
+Calculates and displays the area of the square
+Retrieves the private instance attribute: size
 and sets it to a different value.
-It creates a public instance method my_print()
-which prints to the stdout, a square made of #.
-It uses another private instance attribute:
+Prints to the stdout, a square made of #.
+Uses another private instance attribute:
 position to print # to stdout.
 """
 
@@ -77,6 +75,6 @@ class Square:
         for i in range(self.__size):
             if self.__position[0] >= 0:
                 print(" " * self.__position[0], end="")
-                for j in range(self.__size):
-                    print("#", end="")
-                print("")
+            for j in range(self.__size):
+                print("#", end="")
+            print("")
