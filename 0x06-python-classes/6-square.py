@@ -24,6 +24,7 @@ class Square:
             raise
         except ValueError:
             raise
+        self.__size = size
         if not isinstance(position, tuple):
             raise TypeError("position must be a tuple of 2\
                         positive integers")
@@ -37,7 +38,6 @@ class Square:
         if position[0] < 0 or position[1] < 0:
             raise TypeError("position must be a tuple of 2\
                         positive integers")
-        self.__size = size
         self.__position = position
 
     @property
