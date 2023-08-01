@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """
-Square module
 This module illustrates the use of the Square class
-defined in the 0-square module.
-It creates the Square object, prints the square type
-and displays its dictionary representation.
+defined in the 3-square module.
+It calculates and displays the area of the square
+using the private instance attribute: size.
 """
 
 
