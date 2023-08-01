@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module illustrates the use of the Square class
-defined in the 3-square module.
+defined in the 4-square module.
 It calculates and displays the area of the square
 using the private instance attribute: size.
 It retrieves the private instance attribute: size
