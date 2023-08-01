@@ -2,7 +2,7 @@
 """
 Square module
 This module illustrates the use of the Square class
-defined in the 0-square module.
+defined in the 1-square module.
 It creates the Square object, prints the square type
 and displays its dictionary representation.
 """
