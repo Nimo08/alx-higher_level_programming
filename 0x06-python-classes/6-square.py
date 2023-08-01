@@ -15,29 +15,20 @@ class Square:
     """This class defines a square using private instance attribute: size."""
     def __init__(self, size=0, position=(0, 0)):
         """Initiliaze square with a size and position."""
-        try:
-            if not isinstance(size, int):
-                raise TypeError("size must be an integer")
-            if size < 0:
-                raise ValueError("size must be >= 0")
-        except TypeError:
-            raise
-        except ValueError:
-            raise
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
         self.__size = size
         if not isinstance(position, tuple):
-            raise TypeError("position must be a tuple of 2\
-                        positive integers")
+            raise TypeError("position must be a tuple of 2 positive integers")
         if not isinstance(position[0], int) or\
                 not isinstance(position[1], int):
-            raise TypeError("position must be a tuple of 2\
-                        positive integers")
+            raise TypeError("position must be a tuple of 2 positive integers")
         if len(position) != 2:
-            raise TypeError("position must be a tuple of 2\
-                        positive integers")
+            raise TypeError("position must be a tuple of 2 positive integers")
         if position[0] < 0 or position[1] < 0:
-            raise TypeError("position must be a tuple of 2\
-                        positive integers")
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
     @property
@@ -49,16 +40,11 @@ class Square:
     def size(self, value):
         """Sets the private instance attribute:
             size to a different value."""
-        try:
-            self.__size = value
-            if not isinstance(value, int):
-                raise TypeError("size must be an integer")
-            if value < 0:
-                raise ValueError("size must be >= 0")
-        except TypeError:
-            raise
-        except ValueError:
-            raise
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
 
     @property
     def position(self):
