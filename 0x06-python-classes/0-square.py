@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""This class in intentionally left blank."""
+
+
 class Square:
-    """This class in intentionally left blank."""
     pass
