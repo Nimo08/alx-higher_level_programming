@@ -6,7 +6,7 @@ Attributes:
 Methods:
     None
 Usage:
-    square = Square()
+    my_square = Square()
 """
 
 
