@@ -51,13 +51,16 @@ class Square:
         """This function sets the private instance attribute: size
         to a different value."""
         try:
-            self.__position = value
             if not isinstance(value, tuple):
                 raise TypeError("position must be a tuple of 2\
                         positive integers")
             if not isinstance(value[0], int) or not isinstance(value[1], int):
                 raise TypeError("position must be a tuple of 2\
                         positive integers")
+            if len(value) != 2:
+                raise TypeError("position must be a tuple of 2\
+                        positive integers")
+            self.__position = value
         except TypeError:
             raise
 
@@ -73,7 +76,7 @@ class Square:
             print("")
             return
         for i in range(self.__size):
-            if self.__position[0] > 0:
+            if self.__position[0] >= 0:
                 print(" " * self.__position[0], end="")
                 for j in range(self.__size):
                     print("#", end="")
