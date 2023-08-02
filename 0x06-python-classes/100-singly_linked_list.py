@@ -14,7 +14,7 @@ class Node:
         """Initializes the private instance attributes: data and next_node."""
         if not isinstance(data, int):
             raise TypeError("data must be an integer")
-        if next_node is None and isinstance(next_node, Node):
+        if next_node is not None and not isinstance(next_node, Node):
             raise TypeError("next_node must be a Node object")
         self.__data = data
         self.__next_node = None
@@ -39,7 +39,7 @@ class Node:
     @next_node.setter
     def next_node(self, value):
         """ Next_node Setter"""
-        if value is None and isinstance(value, Node):
+        if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
