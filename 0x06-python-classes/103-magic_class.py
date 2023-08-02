@@ -14,6 +14,8 @@ class MagicClass:
         """Initializes the private instance attribute: radius."""
         if radius is not type(int):
             raise TypeError("radius must be a number")
+        if radius is not type(float):
+            raise TypeError("radius must be a number")
         self._MagicClass__radius = radius
 
     def area(self):
