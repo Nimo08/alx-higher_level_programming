@@ -12,6 +12,10 @@ class Node:
     attributes: data and next_node."""
     def __init__(self, data=0, next_node=None):
         """Initializes the private instance attributes: data and next_node."""
+        if not isinstance(data, int):
+            raise TypeError("data must be an integer")
+        if next_node is None and isinstance(next_node, Node):
+            raise TypeError("next_node must be a Node object")
         self.__data = data
         self.__next_node = None
 
