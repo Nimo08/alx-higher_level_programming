@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-import math
 """
 Module illustrates the use of MagicClass class.
 Calculates area and circumference of a circle.
 """
+
+
+import math
 
 
 class MagicClass:
