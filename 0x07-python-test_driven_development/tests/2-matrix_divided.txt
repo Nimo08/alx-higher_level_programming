@@ -1,0 +1,61 @@
+```matrix_divided``` module
+===========================
+
+Using ``matrix_divided`` function
+=================================
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> print(matrix)
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+>>> matrix = [[6, 5, 2]]
+>>> print(matrix_divided(matrix, 2))
+[[3.0, 2.5, 1.0]]
+
+>>> matrix = [6.8, 7, 9.4]
+>>> print(matrix_divided(matrix, 3))
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[6, 9, 12], [54, 4.5, 21], [5, 7.9, 2]]
+>>> print(matrix_divided(matrix, 3))
+[[2.0, 3.0, 4.0], [18.0, 1.5, 7.0], [1.67, 2.63, 0.67]]
+
+>>> matrix = [[6, 9, 12], [54, 4.5, 21], [5, 7.9, 2]]
+>>> print(matrix)
+[[6, 9, 12], [54, 4.5, 21], [5, 7.9, 2]]
+
+>>> matrix = [[2, 3, 4], [5.6, 4.56, 2.21], [5, 7.9, 2]]
+>>> print(matrix_divided(matrix, 0))
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+>>> matrix = [[1.34, 4.32, 1.0], [6.21, 4, 2], [8, 7.0, 3.1]]
+>>> print(matrix_divided(matrix, "ALX"))
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+>>> matrix = [[]]
+>>> print(matrix_divided(matrix, 4))
+[[]]
+
+>>> matrix = [[]]
+>>> print(matrix)
+[[]]
+
+>>> matrix = []
+>>> print(matrix_divided(matrix, 4))
+[]
+
+>>> matrix = []
+>>> print(matrix)
+[]
