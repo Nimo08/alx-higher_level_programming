@@ -46,3 +46,6 @@ TypeError: first_name must be a string
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
+
+>>> say_my_name("Nimo", "0805")
+My name is Nimo 0805
