@@ -1,14 +1,18 @@
 #!/usr/bin/python3
 """
-print_square module
-Illustrates the use of print_square module
-Prints a square made of # to stdout
+Module contains print_square function
+print_square function: prints a square made of # to stdout
+TypeError occurs when size is not equal to or larger than 0
+TypeError occurs when size is not an integer
 """
 
 
 def print_square(size):
     """
     Prints a square made of # to stdout.
+    Args:
+        size: integer
+    Return: square made of #
     """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
