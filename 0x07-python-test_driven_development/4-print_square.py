@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 print_square module
+Illustrates the use of print_square module
 Prints a square made of # to stdout
 """
 
