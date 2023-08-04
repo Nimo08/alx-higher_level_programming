@@ -1,14 +1,20 @@
 #!/usr/bin/python3
 """
-add_integer module
-Calculates the sum of two numbers
-Prints the sum to the stdout
+Module contains add_integer function
+add_integer function: calculates sum of two numbers
+and prints the result to stdout
+TypeError occurs when a is not an integer
+TypeError occurs when b is not an integer
 """
 
 
 def add_integer(a, b=98):
     """
-    Calculates the sum of two numbers:
+    Calculates the sum of two numbers: a and b
+    Args:
+        a: integer
+        b: integer
+    Return: sum of a and b
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
