@@ -7,6 +7,7 @@ Calculates the area and perimeter of rectangle
 Returns informal string representation of rectangle
 Returns official string representation of rectangle
 Deletes an instance of Rectangle
+Print the rectangle with the character(s) stored in print_symbol
 TypeError: width or height is not an integer
 ValueError: width or height is less than 0
 """
@@ -75,7 +76,7 @@ class Rectangle:
         """Returns informal string representation of rectangle"""
         string = ""
         if self.__height == 0 or self.__width == 0:
-            print("")
+            return ""
         for i in range(self.__height):
             for j in range(self.__width):
                 string += "#"
@@ -93,6 +94,7 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
 
     def __str__(self):
+        """Print the rectangle with the character(s) stored in print_symbol"""
         symbol = ""
         if self.__height == 0 or self.__width == 0:
             return ""
