@@ -68,11 +68,11 @@ class Rectangle:
     def __str__(self):
         """Returns informal string representation of rectangle"""
         string = ""
-        if self.__width == 0 or self.__height == 0:
-            print("")
+        if self.__height == 0 or self.__width == 0:
+            return ""
         for i in range(self.__height):
             for j in range(self.__width):
                 string += "#"
-            if i != self.__height - 1 or i != self.__width - 1:
+            if i != self.__height - 1:
                 string += "\n"
-        return (string)
+        return string
