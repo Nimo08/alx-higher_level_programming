@@ -7,6 +7,7 @@ Calculates the area and perimeter of rectangle
 Returns informal string representation of rectangle
 Returns official string representation of rectangle
 Deletes an instance of Rectangle
+Print the rectangle with the character(s) stored in print_symbol
 Returns the biggest rectangle based on the area
 TypeError: width or height is not an integer
 ValueError: width or height is less than 0
@@ -92,6 +93,18 @@ class Rectangle:
         """Deletes an instance of Rectangle"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+    def __str__(self):
+        """Print the rectangle with the character(s) stored in print_symbol"""
+        symbol = ""
+        if self.__height == 0 or self.__width == 0:
+            return ""
+        for i in range(self.__height):
+            for j in range(self.__width):
+                symbol += str(self.print_symbol)
+            if i != self.__height - 1:
+                symbol += "\n"
+        return symbol
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
