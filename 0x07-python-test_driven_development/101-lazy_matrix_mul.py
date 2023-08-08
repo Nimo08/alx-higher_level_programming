@@ -9,8 +9,6 @@ import numpy as np
 
 
 def lazy_matrix_mul(m_a, m_b):
-    m_a_list = "shapes (1,) and (2, 2) not aligned: 1 (dim 0) != 2 (dim 0)"
-    m_b_list = "shapes (2, 2) and (1,) not aligned: 2 (dim 0) != 1 (dim 0)"
     row_error = "matrix dimensions are not compatible for multiplication"
     matrix_error = "matrix dimensions are not aligned for multiplication"
     if not isinstance(m_a, list):
@@ -19,10 +17,10 @@ def lazy_matrix_mul(m_a, m_b):
         raise TypeError("m_b must be a list")
     for row_x in m_a:
         if not isinstance(row_x, list):
-            raise ValueError(m_a_list)
+            raise ValueError("matrix shapes are not aligned")
     for row_y in m_b:
         if not isinstance(row_y, list):
-            raise ValueError(m_b_list)
+            raise ValueError("matrix shapes are not aligned")
     if not m_a or not m_a[0]:
         raise ValueError("m_a can't be empty")
     if not m_b or not m_b[0]:

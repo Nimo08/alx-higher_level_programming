@@ -19,12 +19,12 @@ TypeError: m_b must be a list
 >>> lazy_matrix_mul([3], [[1, 2,], [3, 4]])
 Traceback (most recent call last):
 ...
-ValueError: shapes (1,) and (2, 2) not aligned: 1 (dim 0) != 2 (dim 0)
+ValueError: matrix shapes are not aligned
 
 >>> lazy_matrix_mul([[1, 2], [3, 4]], [5])
 Traceback (most recent call last):
 ...
-ValueError: shapes (2, 2) and (1,) not aligned: 2 (dim 0) != 1 (dim 0)
+ValueError: matrix shapes are not aligned
 
 >>> lazy_matrix_mul([[]], [[1, 2], [3, 4]])
 Traceback (most recent call last):
