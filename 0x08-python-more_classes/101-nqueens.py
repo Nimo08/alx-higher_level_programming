@@ -4,34 +4,36 @@
 import sys
 
 
-def nQueens(board=[[]], col=0, N=0):
-    if len(sys.argv) != 2:
-        print("Usage: nqueens N")
-        sys.exit(1)
-    if not isinstance(N, int):
-        print("N must be a number")
-        sys.exit(1)
-    if N < 4:
-        print("N must be at least 4")
-        sys.exit(1)
+def nQueens(N):
+    cols = set()
+    posDiagonals = set()
+    negDiagonals = set()
 
-    if len(board) == col:
-        print(board)
-    else:
-        for row in range(board):
-            board[row][col] = 0
-            row += 1
-            if move_queen(board, row, col) is True:
-                nQueens(board, col + 1)
-            board[row][col] = "."
+    board = []
+
+    def backtrack(rows):
+        if rows == int(sys.argv[1]):
+            print(board)
+            return
+
+        for c in range(int(sys.argv[1])):
+            if c in cols or (rows + c) in posDiagonals \
+                    or (rows - c) in negDiagonals:
+                continue
+
+            cols.add(c)
+            posDiagonals.add(rows + c)
+            negDiagonals.add(rows - c)
+            board.append([rows, c])
+
+            backtrack(rows + 1)
+
+            cols.remove(c)
+            posDiagonals.remove(rows + c)
+            negDiagonals.remove(rows - c)
+            board.remove([rows, c])
+
+    backtrack(0)
 
 
-def move_queen(board, row, col):
-    for i in range(col):
-        if board[row][i] == 1:
-            return False
-
-    for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
-        if board[i][j] == 1:
-            return False
-    return True
+nQueens(int(sys.argv[1]))
