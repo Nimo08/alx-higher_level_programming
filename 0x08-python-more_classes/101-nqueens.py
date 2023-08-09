@@ -36,4 +36,12 @@ def nQueens(N):
     backtrack(0)
 
 
+if len(sys.argv) != 2:
+    print("Usage: nqueens N")
+try:
+    int(sys.argv[1])
+except Exception:
+    print("N must be a number")
+if int(sys.argv[1]) < 4:
+    print("N must be at least 4")
 nQueens(int(sys.argv[1]))
