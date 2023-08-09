@@ -25,6 +25,9 @@ def matrix_divided(matrix, div):
     for row in matrix:
         if not isinstance(row, (list)):
             raise TypeError(matrix_error)
+        for i in row:
+            if not isinstance(i, (int, float)):
+                raise TypeError(matrix_error)
         if len(row) != len(matrix[0]):
             raise TypeError(len_error)
     if not isinstance(div, (int, float)):

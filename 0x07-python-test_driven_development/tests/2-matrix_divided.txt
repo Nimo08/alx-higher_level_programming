@@ -44,6 +44,12 @@ Traceback (most recent call last):
 ...
 TypeError: div must be a number
 
+>>> matrix = [[1.34, 4.32, 1.0], [6.21, "4", 2], [8, 7.0, 3.1]]
+>>> print(matrix_divided(matrix, 5))
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 >>> matrix = [[]]
 >>> print(matrix_divided(matrix, 4))
 [[]]
