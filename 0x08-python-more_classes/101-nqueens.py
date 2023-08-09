@@ -12,11 +12,11 @@ def nQueens(N):
     board = []
 
     def backtrack(rows):
-        if rows == int(sys.argv[1]):
+        if rows == N:
             print(board)
             return
 
-        for c in range(int(sys.argv[1])):
+        for c in range(N):
             if c in cols or (rows + c) in posDiagonals \
                     or (rows - c) in negDiagonals:
                 continue
@@ -38,9 +38,7 @@ def nQueens(N):
 
 if len(sys.argv) != 2:
     print("Usage: nqueens N")
-try:
-    int(sys.argv[1])
-except Exception:
+if not int(sys.argv[1]):
     print("N must be a number")
 if int(sys.argv[1]) < 4:
     print("N must be at least 4")
