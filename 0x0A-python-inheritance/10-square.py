@@ -27,6 +27,6 @@ class Square(Rectangle):
 
     def __str__(self):
         """
-        Returns informal representation of string
+        Returns informal string representation of an object.
         """
         return "[Rectangle] {:d}/{:d}".format(self.__size, self.__size)
