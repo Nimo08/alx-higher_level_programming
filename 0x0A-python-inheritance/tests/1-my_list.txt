@@ -1,0 +1,39 @@
+``my_list`` module
+==================
+
+Using ``my_list`` function
+==========================
+
+>>> MyList = __import__('1-my_list').MyList
+
+
+>>> doc = __import__("1-my_list").__doc__
+>>> len(doc) > 0
+True
+
+>>> doc = __import__("1-my_list").MyList.__doc__
+>> len(doc) > 0
+True
+
+>>> doc = __import__("1-my_list").MyList.print_sorted.__doc__
+>>> len(doc) > 0
+True
+
+>>> type(MyList)
+<class 'type'>
+
+>>> type(MyList.print_sorted)
+<class 'function'>
+
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
