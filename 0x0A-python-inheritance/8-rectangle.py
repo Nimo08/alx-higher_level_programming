@@ -4,6 +4,7 @@ Module contains an instance of the BaseGeometry class
 and tries to print its area, otherwise raises an
 exception message.
 """
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class BaseGeometry:
