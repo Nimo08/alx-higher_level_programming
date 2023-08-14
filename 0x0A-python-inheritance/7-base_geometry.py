@@ -26,3 +26,4 @@ class BaseGeometry:
             raise ValueError(f"{name} must be greater than 0")
         self.name = name
         self.value = value
+        return name, value
