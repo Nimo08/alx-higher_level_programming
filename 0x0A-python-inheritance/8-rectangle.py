@@ -21,11 +21,9 @@ class BaseGeometry:
         Validates the value
         """
         if type(value) != int:
-            raise TypeError(f"{name} must be an integer")
+            raise TypeError("{:s} must be an integer".format(name))
         if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
-        self.name = name
-        self.value = value
+            raise ValueError("{:s} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
@@ -38,6 +36,7 @@ class Rectangle(BaseGeometry):
         """
         Initializes private instance attributes: width and height.
         """
-        BaseGeometry.integer_validator(self, width, height)
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
