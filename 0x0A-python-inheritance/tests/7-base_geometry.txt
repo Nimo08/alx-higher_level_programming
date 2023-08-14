@@ -6,8 +6,6 @@ Using ``base_geometry`` function
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
->>> bg = BaseGeometry()
-
 >>> doc = __import__("7-base_geometry").__doc__
 >>> len(doc) > 0
 True
@@ -23,6 +21,8 @@ True
 >>> doc = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
 >>> len(doc) > 0
 True
+
+>>> bg = BaseGeometry()
 
 >>> bg.area()
 Traceback (most recent call last):
