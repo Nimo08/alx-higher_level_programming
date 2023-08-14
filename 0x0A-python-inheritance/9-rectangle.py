@@ -17,8 +17,9 @@ class Rectangle(BaseGeometry):
         """
         Initializes private instance attributes: width and height.
         """
-        BaseGeometry.integer_validator(self, width, height)
+        self.integer_validator("width", width)
         self.__width = width
+        self.integer_validator("height", height)
         self.__height = height
 
     def area(self):
