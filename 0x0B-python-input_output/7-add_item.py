@@ -1,12 +1,16 @@
 #!/usr/bin/python3
+"""
+Imports sys module, save_to_json_file
+and load_from_json file.
+"""
+
+
 import sys
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
 """
-Imports json and sys modules, as well as save_to_json_file
-and load_from_json file.
 Adds all arguments to a Python list, and then save them to
 a file.
 """
