@@ -1,6 +1,15 @@
 #!/usr/bin/python3
+"""
+Module calls append_write function.
+"""
+
+
 def append_write(filename="", text=""):
-    filename = "file_append.txt"
-    text = "This School is so cool!\n"
-    with open(filename, 'a', encoding="utf-8") as f:
-        return f.write(text)
+    """
+    Appends a string at the end of a text file (UTF8)
+    and returns the number of characters added.
+    """
+    with open(filename, 'a') as f:
+        f.write(text)
+        num_chars = len(text)
+        return num_chars
