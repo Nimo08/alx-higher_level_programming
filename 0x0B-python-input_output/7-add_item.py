@@ -11,10 +11,13 @@ and load_from_json file.
 Adds all arguments to a Python list, and then save them to
 a file.
 """
-arg = sys.argv
 filename = "add_item.json"
 with open(filename, 'a+', encoding="utf-8") as f:
-    arg_list = []
-    arg_list += arg[1:]
-    save_to_json_file(arg_list, filename)
-    load_from_json_file(filename)
+    args = sys.argv[1:]
+    args_list = []
+    if filename:
+        args_list = load_from_json_file(filename)
+    else:
+        args_list = []
+    args_list.extend(args)
+    save_to_json_file(args_list, filename)
