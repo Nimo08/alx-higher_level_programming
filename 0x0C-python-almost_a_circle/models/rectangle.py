@@ -3,7 +3,7 @@
 Module creates instances of Rectangle class,
 assigns width and height, then prints the id.
 """
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):

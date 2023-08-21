@@ -114,11 +114,10 @@ class Base:
         if exists(filename):
             with open(filename, 'r') as f:
                 csvreader = csv.reader(f)
-                for row in csvreader:
-                    instance = cls.create(**row)
-                    instance_list.append(instance)
+        instance_list = [cls.create(**instance) for instance in instance_list]
         return instance_list
 
+    @staticmethod
     def draw(list_rectangles, list_squares):
         """
         Opens a window and draws all the Rectangles and Squares.
