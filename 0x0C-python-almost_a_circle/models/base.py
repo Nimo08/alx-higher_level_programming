@@ -41,10 +41,15 @@ class Base:
         Writes the JSON string representation of list_objs to a file.
         """
         filename = type(list_objs[0]).__name__ + ".json"
-        json_list = [i.to_dictionary() for i in list_objs]
-        json_str = cls.to_json_string(json_list)
-        with open(filename, 'w') as f:
-            f.write(json_str)
+        try:
+            json_list = [i.to_dictionary() for i in list_objs]
+            json_str = cls.to_json_string(json_list)
+        except Exception:
+            with open(filename, 'w+') as f:
+                if list_objs is None:
+                    f.write("[]")
+                else:
+                    f.write(json_str)
 
     @staticmethod
     def from_json_string(json_string):
