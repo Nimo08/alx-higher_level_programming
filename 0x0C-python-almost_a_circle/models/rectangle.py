@@ -120,14 +120,12 @@ class Rectangle(Base):
         """
         Prints in stdout the Rectangle instance with #.
         """
-        for a in range(self.__x):
-            for b in range(self.__y):
-                if b != self.__y - 1:
-                    print("")
-
-        for i in range(self.__height):
-            print(" " * self.__height, end="")
-            for j in range(self.__width):
+        for a in range(self.__y):
+            print("")
+        for i in range(1, self.__height+1):
+            for b in range(self.__x):
+                print(" ", end="")
+            for j in range(0, self.__width):
                 print("#", end="")
             print("")
 
