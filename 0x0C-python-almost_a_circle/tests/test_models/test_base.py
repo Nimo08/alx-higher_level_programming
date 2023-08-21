@@ -91,6 +91,11 @@ class TestBase(unittest.TestCase):
         r2 = Rectangle.create(**r1_dictionary)
         self.assertEqual((r1 is r2), False)
         self.assertEqual((r1 == r2), False)
+        s1 = Square(2, 1, 2)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual((s1 is s2), False)
+        self.assertEqual((s1 == s2), False)
 
     def test_load_from_file(self):
         """
