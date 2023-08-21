@@ -35,6 +35,7 @@ class TestBase(unittest.TestCase):
         Tests to_json_string method.
         """
         obj1 = Square(10, 2, 8)
+        self.assertEqual(type(obj1), Square)
         dict_sq = obj1.to_dictionary()
         json_dict_sq = Base.to_json_string([dict_sq])
         json_dict_sq_1 = Base.to_json_string([])
@@ -45,6 +46,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(json_dict_sq_2, "[]")
         self.assertDictEqual(from_json[0], dict_sq)
         obj = Rectangle(10, 7, 2, 8)
+        self.assertEqual(type(obj), Rectangle)
         dictionary = obj.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
         json_dictionary_1 = Base.to_json_string([])
@@ -68,6 +70,7 @@ class TestBase(unittest.TestCase):
             from_json = json.load(file)
             self.assertEqual(from_json, [])
         obj1 = Rectangle(10, 7, 2, 8)
+        self.assertEqual(type(obj1), Rectangle)
         obj2 = Rectangle(2, 4)
         Square.save_to_file([])
         with open("Square.json", "r") as file:
@@ -105,11 +108,13 @@ class TestBase(unittest.TestCase):
         Tests create method.
         """
         r1 = Rectangle(3, 5, 1)
+        self.assertEqual(type(r1), Rectangle)
         r1_dictionary = r1.to_dictionary()
         r2 = Rectangle.create(**r1_dictionary)
         self.assertEqual((r1 is r2), False)
         self.assertEqual((r1 == r2), False)
         s1 = Square(2, 1, 2)
+        self.assertEqual(type(s1), Square)
         s1_dictionary = s1.to_dictionary()
         s2 = Square.create(**s1_dictionary)
         self.assertEqual((s1 is s2), False)
