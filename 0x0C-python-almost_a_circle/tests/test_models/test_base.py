@@ -34,6 +34,16 @@ class TestBase(unittest.TestCase):
         """
         Tests to_json_string method.
         """
+        obj1 = Square(10, 2, 8)
+        dict_sq = obj1.to_dictionary()
+        json_dict_sq = Base.to_json_string([dict_sq])
+        json_dict_sq_1 = Base.to_json_string([])
+        json_dict_sq_2 = Base.to_json_string(None)
+        self.assertEqual(type(json_dict_sq), str)
+        from_json = json.loads(json_dict_sq)
+        self.assertEqual(json_dict_sq_1, "[]")
+        self.assertEqual(json_dict_sq_2, "[]")
+        self.assertDictEqual(from_json[0], dict_sq)
         obj = Rectangle(10, 7, 2, 8)
         dictionary = obj.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
