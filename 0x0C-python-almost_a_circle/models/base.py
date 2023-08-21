@@ -90,33 +90,6 @@ class Base:
         instance_list = [cls.create(**instance) for instance in instance_list]
         return instance_list
 
-    @classmethod
-    def save_to_file_csv(cls, list_objs):
-        """
-        Serializes in CSV.
-        """
-        import csv
-        filename = type(list_objs[0]).__name__ + ".csv"
-        csv_list = [i.to_dictionary() for i in list_objs]
-        with open(filename, 'w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerows(csv_list)
-
-    @classmethod
-    def load_from_file_csv(cls):
-        """
-        Deserialize in CSV.
-        """
-        import csv
-        from os.path import exists
-        instance_list = []
-        filename = cls.__name__ + ".csv"
-        if exists(filename):
-            with open(filename, 'r') as f:
-                csvreader = csv.reader(f)
-        instance_list = [cls.create(**instance) for instance in instance_list]
-        return instance_list
-
     @staticmethod
     def draw(list_rectangles, list_squares):
         """
