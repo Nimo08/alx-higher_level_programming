@@ -49,6 +49,14 @@ class TestBase(unittest.TestCase):
         """
         Tests save_to_file method.
         """
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as f:
+            from_json = json.load(f)
+            self.assertEqual(from_json, [])
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as f:
+            from_json = json.load(f)
+            self.assertEqual(from_json, [])
         obj1 = Rectangle(10, 7, 2, 8)
         obj2 = Rectangle(2, 4)
         Rectangle.save_to_file([obj1, obj2])
