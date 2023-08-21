@@ -3,7 +3,7 @@
 Module creates instances of Square class,
 prints the instance and the area.
 """
-from models.rectangle import Rectangle
+from rectangle import Rectangle
 
 
 class Square(Rectangle):
