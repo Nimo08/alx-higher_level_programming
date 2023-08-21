@@ -50,15 +50,23 @@ class TestBase(unittest.TestCase):
         Tests save_to_file method.
         """
         Rectangle.save_to_file([])
-        with open("Rectangle.json", "r") as f:
-            from_json = json.load(f)
+        with open("Rectangle.json", "r") as file:
+            from_json = json.load(file)
             self.assertEqual(from_json, [])
         Rectangle.save_to_file(None)
-        with open("Rectangle.json", "r") as f:
-            from_json = json.load(f)
+        with open("Rectangle.json", "r") as file:
+            from_json = json.load(file)
             self.assertEqual(from_json, [])
         obj1 = Rectangle(10, 7, 2, 8)
         obj2 = Rectangle(2, 4)
+        Square.save_to_file([])
+        with open("Square.json", "r") as file:
+            from_json = json.load(file)
+            self.assertEqual(from_json, [])
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            from_json = json.load(file)
+            self.assertEqual(from_json, [])
         Rectangle.save_to_file([obj1, obj2])
         with open("Rectangle.json", "r") as file:
             content = (file.read())
