@@ -43,7 +43,7 @@ class Base:
         try:
             json_list = [i.to_dictionary() for i in list_objs]
         except Exception:
-            pass
+            json_list = []
         json_str = cls.to_json_string(json_list)
         filename = cls.__name__ + ".json"
         with open(filename, 'w+') as f:
