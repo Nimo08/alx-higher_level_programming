@@ -102,7 +102,7 @@ class Base:
         Opens a window and draws all the Rectangles and Squares.
         """
         import turtle
-        list_rectangles = turtle.Turtle()
+        turtle.Turtle()
         turtle.fillcolor("DarkSalmon")
         turtle.begin_fill()
         for i in range(3):
@@ -115,11 +115,32 @@ class Base:
             turtle.forward(120)
             turtle.right(90)
         turtle.end_fill()
-        list_squares = turtle.Turtle()
         turtle.fillcolor("LemonChiffon2")
         turtle.begin_fill()
         for i in range(4):
             turtle.forward(50)
             turtle.right(90)
         turtle.end_fill()
+        list_rect_color = ["LightPink1", "LightGoldenRod", "LightGray"]
+        index = 0
+        for i in list_rectangles:
+            turtle.fillcolor(list_rect_color[index])
+            turtle.begin_fill()
+            for j in range(2):
+                turtle.forward(i.width)
+                turtle.left(90)
+                turtle.forward(i.height)
+                turtle.left(90)
+            index += 1
+            turtle.end_fill()
+        list_sq_color = ["DodgerBlue", "ForestGreen", "FloralWhite"]
+        index_1 = 0
+        for i in list_squares:
+            turtle.fillcolor(list_sq_color[index_1])
+            turtle.begin_fill()
+            for j in range(4):
+                turtle.forward(i.width)
+                turtle.left(90)
+            index_1 += 1
+            turtle.end_fill()
         turtle.done()
