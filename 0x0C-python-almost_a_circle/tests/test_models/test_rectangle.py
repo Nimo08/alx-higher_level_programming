@@ -50,6 +50,13 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             r1 = Rectangle(0, 2)
 
+    def test_width_neg(self):
+        """
+        Tests negative width.
+        """
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(-10, 2)
+
     def test_height_int(self):
         """
         Tests height of int type.
@@ -70,6 +77,13 @@ class TestRectangle(unittest.TestCase):
         """
         with self.assertRaises(ValueError):
             r1 = Rectangle(10, 0)
+
+    def test_height_neg(self):
+        """
+        Tests negative height.
+        """
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(10, -2)
 
     def test_x_int(self):
         """
@@ -136,7 +150,7 @@ class TestRectangle(unittest.TestCase):
         with patch("sys.stdout", new=output) as capturedOutput:
             r1.display()
             capturedOutput = output.getvalue()
-            expected = "  ##\n  ##\n"
+            expected = "##\n##\n"
         self.assertEqual(capturedOutput, expected)
 
     def test_str(self):

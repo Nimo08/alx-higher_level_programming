@@ -49,6 +49,13 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError):
             s1 = Square(0)
 
+    def test_size_neg(self):
+        """
+        Tests negative size.
+        """
+        with self.assertRaises(ValueError):
+            s1 = Square(-2)
+
     def test_x_int(self):
         """
         Tests x of int type.
@@ -114,7 +121,7 @@ class TestSquare(unittest.TestCase):
         with patch("sys.stdout", new=output) as capturedOutput:
             s1.display()
             capturedOutput = output.getvalue()
-            expected = "  ##\n  ##\n"
+            expected = "##\n##\n"
         self.assertEqual(capturedOutput, expected)
 
     def test_str(self):
