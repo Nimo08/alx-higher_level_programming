@@ -124,6 +124,21 @@ class TestSquare(unittest.TestCase):
             expected = "##\n##\n"
         self.assertEqual(capturedOutput, expected)
 
+    def test_display_not_zero(self):
+        """
+        Tests display method when x and y are not zero.
+        """
+        import sys
+        from unittest.mock import patch
+        import io
+        s1 = Square(2, 2)
+        output = io.StringIO()
+        with patch("sys.stdout", new=output) as capturedOutput:
+            s1.display()
+            capturedOutput = output.getvalue()
+            expected = "  ##\n  ##\n"
+        self.assertEqual(capturedOutput, expected)
+
     def test_str(self):
         """
         Tests __str__method.

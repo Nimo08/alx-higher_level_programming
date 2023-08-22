@@ -153,6 +153,21 @@ class TestRectangle(unittest.TestCase):
             expected = "##\n##\n"
         self.assertEqual(capturedOutput, expected)
 
+    def test_display_not_zero(self):
+        """
+        Tests display method when x and y are not zero.
+        """
+        import sys
+        from unittest.mock import patch
+        import io
+        r1 = Rectangle(2, 3, 2, 2)
+        output = io.StringIO()
+        with patch("sys.stdout", new=output) as capturedOutput:
+            r1.display()
+            capturedOutput = output.getvalue()
+            expected = "\n\n  ##\n  ##\n  ##\n"
+        self.assertEqual(capturedOutput, expected)
+
     def test_str(self):
         """
         Tests __str__method.
