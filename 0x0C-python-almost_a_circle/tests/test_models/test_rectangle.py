@@ -195,6 +195,16 @@ class TestRectangle(unittest.TestCase):
         r1_dictionary = r1.to_dictionary()
         self.assertEqual(r1_dictionary, dictionary)
 
+    def test_rect_none(self):
+        """
+        Tests for Rectangle(None).
+        """
+        import json
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            from_json = json.load(file)
+            self.assertEqual(from_json, [])
+
     def tearDown(self):
         """
         Deallocating resources.

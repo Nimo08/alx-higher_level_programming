@@ -172,6 +172,16 @@ class TestSquare(unittest.TestCase):
         s1_dictionary = s1.to_dictionary()
         self.assertEqual(s1_dictionary, dictionary)
 
+    def test_square_none(self):
+        """
+        Tests for Square(None).
+        """
+        import json
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            from_json = json.load(file)
+            self.assertEqual(from_json, [])
+
     def tearDown(self):
         """
         Deallocates resources.
