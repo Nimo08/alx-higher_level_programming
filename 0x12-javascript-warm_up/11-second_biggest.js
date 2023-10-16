@@ -8,10 +8,15 @@ if (process.argv.length <= 2) {
   let biggest = -Infinity;
   let secondBiggest = -Infinity;
   const len = process.argv.length;
-  for (let i = 0; i < len; i++) {
-    if (process.argv[i] > biggest) {
-      secondBiggest = biggest;
-      biggest = process.argv[i];
+  for (let i = 2; i < len; i++) {
+    const num = parseInt(process.argv[i], 10);
+    if (!isNaN(num)) {
+      if (num > biggest) {
+        secondBiggest = biggest;
+        biggest = num;
+      } else if (num > secondBiggest) {
+        secondBiggest = num;
+      }
     }
   }
   console.log(secondBiggest);
