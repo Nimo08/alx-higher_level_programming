@@ -8,5 +8,5 @@ const fileAdata = fs.readFileSync(fileA, 'utf8'); // read contents
 const fileBdata = fs.readFileSync(fileB, 'utf8');
 const res = fileAdata + fileBdata; // store content in res
 fs.writeFileSync(fileC, res); // write content to fileC
-const fileCdata = fs.readFileSync(fileC, 'utf-8'); // read fileC
+const fileCdata = fs.readFileSync(fileC, 'utf-8').trim(); // read fileC
 console.log(fileCdata); // print fileC
