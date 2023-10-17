@@ -6,7 +6,7 @@ const fileB = process.argv[3];
 const fileC = process.argv[4];
 const fileAdata = fs.readFileSync(fileA, 'utf8'); // read contents
 const fileBdata = fs.readFileSync(fileB, 'utf8');
-const res = fileAdata + fileBdata; // store content in res
+const res = (fileAdata + fileBdata).trim(); // store content in res
 fs.writeFileSync(fileC, res); // write content to fileC
-const fileCdata = fs.readFileSync(fileC, 'utf-8').trim(); // read fileC
+const fileCdata = fs.readFileSync(fileC, 'utf-8'); // read fileC
 console.log(fileCdata); // print fileC
