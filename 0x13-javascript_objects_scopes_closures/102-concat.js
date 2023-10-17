@@ -1,6 +1,9 @@
 #!/usr/bin/node
 const process = require('process');
 const fs = require('fs');
+if (process.argv.length !== 5) {
+  process.exit(1);
+}
 const fileA = process.argv[2]; // get file paths
 const fileB = process.argv[3];
 const fileC = process.argv[4];
