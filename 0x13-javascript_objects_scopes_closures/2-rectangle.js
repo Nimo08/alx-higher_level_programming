@@ -2,7 +2,7 @@
 class Rectangle {
   constructor (w, h) {
     if (w <= 0 || h <= 0) {
-      this.obj = {};
+      const obj = {};
     } else {
       this.width = w;
       this.height = h;
