@@ -29,7 +29,7 @@ engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
 
 Base.metadata.create_all(engine)
 
-Session = sessionmaker(bind=engine)
+Session = sessionmaker(engine)
 session = Session()
 
 for state in session.query(State).order_by(State.id).all():
