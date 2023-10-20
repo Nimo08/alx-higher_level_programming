@@ -5,22 +5,19 @@ Prints the first State object from the database hbtn_0e_6_usa
 
 
 import sys
-from model_state import Base, State, session
+from model_state import Base, State
 from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        sys.exit(1)
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                           .format(mysql_username, mysql_password,
-                                   database_name), pool_pre_ping=True)
-
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
     Base.metadata.create_all(engine)
+
+    session = Session(engine)
 
     empty_state = session.query(State).count() == 0
     if empty_state:
