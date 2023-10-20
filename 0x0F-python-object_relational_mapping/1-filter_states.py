@@ -21,7 +21,8 @@ if __name__ == "__main__":
                            db=database_name, charset="utf8")
     cur = conn.cursor()
     cur.execute("""SELECT id, name FROM states
-                WHERE name LIKE 'N%' ORDER BY id ASC""")
+                WHERE name LIKE _utf8mb4 'N%' COLLATE utf8mb4_0900_as_cs
+                ORDER BY id ASC""")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
