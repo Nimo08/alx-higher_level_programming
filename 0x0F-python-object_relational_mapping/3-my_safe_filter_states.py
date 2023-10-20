@@ -26,8 +26,8 @@ if __name__ == "__main__":
     query = """SELECT id, name FROM states
     WHERE name LIKE _utf8mb4 %s COLLATE utf8mb4_0900_as_cs ORDER BY id ASC"""
     cur.execute(query, (state_name_searched,))
-    query_row = cur.fetchone()
-    if query_row:
-        print(query_row)
+    query_rows = cur.fetchall()
+    for row in query_rows:
+        print(row)
     cur.close()
     conn.close()
