@@ -25,7 +25,8 @@ if __name__ == "__main__":
     #  prevent sql injection
     query = """SELECT cities.name FROM cities INNER JOIN states
     ON cities.state_id = states.id
-    WHERE states.name = %s ORDER BY cities.id ASC"""
+    WHERE states.name LIKE _utf8mb4 %s COLLATE utf8mb4_0900_as_cs
+    ORDER BY cities.id ASC"""
     cur.execute(query, (state_name,))
     query_rows = cur.fetchall()
     if query_rows:
