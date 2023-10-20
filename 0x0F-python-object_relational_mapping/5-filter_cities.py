@@ -1,13 +1,13 @@
-#!/usr/bin/env python3
-import MySQLdb
-import sys
-
-
+#!/usr/bin/python3
 """
 Takes in the name of a state as an argument and
 lists all cities of that state, using the database
 hbtn_0e_4_usa
 """
+
+
+import MySQLdb
+import sys
 
 
 if __name__ == "__main__":
@@ -22,7 +22,7 @@ if __name__ == "__main__":
                            passwd=mysql_password,
                            db=database_name, charset="utf8")
     cur = conn.cursor()
-    #  prevent sql injection by using parametized queries:
+    #  prevent sql injection
     query = """SELECT cities.name FROM cities INNER JOIN states
     ON cities.state_id = states.id
     WHERE states.name = %s ORDER BY cities.id ASC"""
