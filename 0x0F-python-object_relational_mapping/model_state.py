@@ -7,7 +7,7 @@ instance Base = declarative_base()
 
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 
 
 Base = declarative_base()
@@ -29,8 +29,7 @@ engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
 
 Base.metadata.create_all(engine)
 
-Session = sessionmaker(engine)
-session = Session()
+session = Session(engine)
 
 for state in session.query(State).order_by(State.id).all():
     print("{}: {}".format(state.id, state.name))
