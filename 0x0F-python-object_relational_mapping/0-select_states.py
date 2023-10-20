@@ -18,10 +18,15 @@ if __name__ == "__main__":
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
-
+    """
+    Connects to a MySQL server running on localhost at port 3306
+    """
     conn = MySQLdb.connect(host="localhost", port=3306, user=mysql_username,
                            passwd=mysql_password, db=database_name,
                            charset="utf8")
+    """
+    Cursor object to interact with database
+    """
     cur = conn.cursor()
     cur.execute("SELECT id, name FROM states ORDER BY id ASC")
     query_rows = cur.fetchall()
