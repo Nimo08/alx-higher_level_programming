@@ -9,6 +9,7 @@ But this time, write one that is safe from MySQL injections!
 import MySQLdb
 import sys
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 5:
         sys.exit(1)
