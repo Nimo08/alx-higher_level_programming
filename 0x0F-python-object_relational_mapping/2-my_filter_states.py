@@ -18,7 +18,7 @@ if __name__ == "__main__":
     state_name_searched = sys.argv[4]
 
     user_query = """SELECT id, name FROM states
-    WHERE name = %s ORDER BY states.id ASC"""
+    WHERE name = %s ORDER BY id ASC"""
     conn = MySQLdb.connect(host="localhost", port=3306, user=mysql_username,
                            passwd=mysql_password,
                            db=database_name, charset="utf8")
