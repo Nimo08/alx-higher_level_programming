@@ -24,7 +24,7 @@ class State(Base):
 
 
 engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                       .format("nimo", "House27809!", "hbtn_0e_6_usa"),
+                       .format("root", "root", "hbtn_0e_6_usa"),
                        pool_pre_ping=True)
 
 
