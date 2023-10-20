@@ -29,8 +29,7 @@ if __name__ == "__main__":
     ORDER BY cities.id ASC"""
     cur.execute(query, (state_name,))
     query_rows = cur.fetchall()
-    if query_rows:
-        res = ', '.join(row[0] for row in query_rows)
-        print(res)
+    res = ', '.join(row[0] for row in query_rows)
+    print(res)
     cur.close()
     conn.close()
