@@ -12,7 +12,12 @@ Code should not be executed when imported
 """
 
 
-def func(mysql_username, mysql_password, database_name):
+if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        sys.exit(1)
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    database_name = sys.argv[3]
     """
     Connects to a MySQL server running on localhost at port 3306
     """
@@ -23,18 +28,9 @@ def func(mysql_username, mysql_password, database_name):
     Cursor object to interact with database
     """
     cur = conn.cursor()
-    cur.execute("SELECT id, name FROM states ORDER BY id ASC")
+    cur.execute("SELECT id, name FROM states ORDER BY states.id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
     cur.close()
     conn.close()
-
-
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        sys.exit(1)
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
-    func(mysql_username, mysql_password, database_name)
