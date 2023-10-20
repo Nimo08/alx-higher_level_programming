@@ -5,7 +5,7 @@ instance Base = declarative_base()
 """
 
 
-from sqlalchemy import (create_engine), Column, Integer, String
+from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
@@ -24,7 +24,7 @@ class State(Base):
 
 
 engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                       .format("root", "root", "my_db"),
+                       .format("nimo", "House27809!", "hbtn_0e_6_usa"),
                        pool_pre_ping=True)
 
 Base.metadata.create_all(engine)
