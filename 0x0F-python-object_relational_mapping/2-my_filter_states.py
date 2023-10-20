@@ -17,11 +17,11 @@ if __name__ == "__main__":
     database_name = sys.argv[3]
     state_name_searched = sys.argv[4]
 
-    query = """SELECT id, name FROM states
-    WHERE name LIKE %s ORDER BY id ASC"""
     conn = MySQLdb.connect(host="localhost", port=3306, user=mysql_username,
                            passwd=mysql_password,
                            db=database_name, charset="utf8")
+    query = """SELECT id, name FROM states
+    WHERE name LIKE %s ORDER BY id ASC"""
     cur = conn.cursor()
     cur.execute(query, ('{}%'.format(state_name_searched),))
     query_row = cur.fetchone()
