@@ -24,7 +24,7 @@ class State(Base):
 
 
 engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                       .format("root", "root", "hbtn_0e_6_usa"),
+                       .format("root", "root", "my_db"),
                        pool_pre_ping=True)
 
 Base.metadata.create_all(engine)
