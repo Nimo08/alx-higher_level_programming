@@ -20,9 +20,9 @@ if __name__ == "__main__":
     conn = MySQLdb.connect(host="localhost", port=3306, user=mysql_username,
                            passwd=mysql_password,
                            db=database_name, charset="utf8")
+    cur = conn.cursor()
     query = """SELECT id, name FROM states
     WHERE name LIKE %s ORDER BY id ASC"""
-    cur = conn.cursor()
     cur.execute(query, ('{}%'.format(state_name_searched),))
     query_row = cur.fetchone()
     if query_row:
