@@ -21,7 +21,7 @@ if __name__ == "__main__":
                            db=database_name, charset="utf8")
     cur = conn.cursor()
     #  prevent sql injection
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    query = "SELECT id, name FROM states WHERE name = %s ORDER BY id ASC"
     cur.execute(query, (state_name_searched,))
     query_row = cur.fetchone()
     if query_row:
