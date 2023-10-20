@@ -20,8 +20,8 @@ if __name__ == "__main__":
                            passwd=mysql_password,
                            db=database_name, charset="utf8")
     cur = conn.cursor()
-    cur.execute("""SELECT id, name FROM states WHERE name LIKE 'N%'
-                ORDER BY id ASC""")
+    cur.execute("""SELECT id, name FROM states
+                WHERE name LIKE 'N%' ORDER BY id ASC""")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
