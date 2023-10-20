@@ -12,12 +12,7 @@ Code should not be executed when imported
 """
 
 
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        sys.exit(1)
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
+def func(mysql_username, mysql_password, database_name):
     """
     Connects to a MySQL server running on localhost at port 3306
     """
@@ -34,3 +29,12 @@ if __name__ == "__main__":
         print(row)
     cur.close()
     conn.close()
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        sys.exit(1)
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    database_name = sys.argv[3]
+    func(mysql_username, mysql_password, database_name)
