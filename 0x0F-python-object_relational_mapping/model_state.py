@@ -23,12 +23,6 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
 
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                       .format("nimo", "House27809!", "hbtn_0e_6_usa"),
-                       pool_pre_ping=True)
-
-Base.metadata.create_all(engine)
-
 session = Session(engine)
 
 for state in session.query(State).order_by(State.id).all():
