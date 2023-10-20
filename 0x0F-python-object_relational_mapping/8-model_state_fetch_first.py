@@ -22,6 +22,8 @@ if __name__ == "__main__":
     empty_state = session.query(State).count() == 0
     if empty_state:
         print("Nothing")
+    session.close()
     state = session.query(State).filter(State.id == 1).first()
     if state:
         print(f"{state.id}: {state.name}")
+    session.close()
