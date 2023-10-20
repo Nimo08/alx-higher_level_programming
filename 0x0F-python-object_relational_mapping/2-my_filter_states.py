@@ -23,7 +23,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
     query = """SELECT id, name FROM states
     WHERE name LIKE %s ORDER BY id ASC"""
-    cur.execute(query, ('{}%'.format(state_name_searched),))
+    cur.execute(query, ('{}'.format(state_name_searched),))
     query_row = cur.fetchone()
     if query_row:
         print(query_row)
