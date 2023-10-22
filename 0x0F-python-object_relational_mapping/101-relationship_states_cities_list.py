@@ -6,8 +6,8 @@ contained in the database hbtn_0e_101_usa
 
 
 import sys
-from model_state import Base, State
-from model_city import City
+from relationship_state import Base, State
+from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
@@ -22,12 +22,9 @@ if __name__ == "__main__":
 
     session = Session(engine)
 
-    query = session.query(State, City).filter(State.id == City.state_id)
-    res = query.order_by(State.id, City.id).all()
-    cur_state = None
-    for state, city in res:
-        if state.id != cur_state:
-            cur_state = state.id
-            print(f"{state.id}: {state.name}")
-        print(f"    {city.id}: {city.name}")
+    query = session.query(State).order_by(State.id).all()
+    for state in query:
+        print(f"{state.id}: {state.name}")
+        for city in state.cities:
+            print(f"    {city.id}: {city.name}")
     session.close()
