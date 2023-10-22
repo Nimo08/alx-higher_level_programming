@@ -23,8 +23,6 @@ if __name__ == "__main__":
     session = Session(engine)
 
     state = State(name="California")
-    # use state=state bc of the backref='state' as it created a
-    # bi-directional relationship
     city = City(name="San Francisco", state=state)
 
     session.add(state)
