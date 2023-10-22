@@ -22,9 +22,12 @@ if __name__ == "__main__":
 
     session = Session(engine)
 
-    query = session.query(State).order_by(State.id).all()
-    for state in query:
-        print(f"{state.id}: {state.name}")
-        for city in state.cities:
-            print(f"    {city.id}: {city.name}")
+    query = session.query(State, City).filter(State.id == City.state_id)\
+        .order_by(State.id, City.id).all()
+    cur_state = None
+    for state, city in query:
+        if state.id != cur_state:
+            cur_state = state.id
+            print(f"{state.id}: {state.name}")
+        print(f"    {city.id}: {city.name}")
     session.close()
