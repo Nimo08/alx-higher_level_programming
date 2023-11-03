@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     commits = response.json()
     for index, commit in enumerate(commits):
-        if index > 10:
+        if index >= 10:
             break
         sha = commit['sha']
         author = commit['commit']['author']['name']
