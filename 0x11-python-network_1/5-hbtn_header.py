@@ -10,9 +10,10 @@ import requests
 import sys
 
 
-url = sys.argv[1]
-variable = 'X-Request-Id'
-req = requests.get(url)
-if variable in req.headers:
-    value = req.headers[variable]
-    print(f"{value}")
+if __name__ == "__main__":
+    url = sys.argv[1]
+    variable = 'X-Request-Id'
+    req = requests.get(url)
+    if variable in req.headers:
+        value = req.headers[variable]
+        print(f"{value}")

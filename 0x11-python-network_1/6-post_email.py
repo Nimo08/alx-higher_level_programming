@@ -10,7 +10,8 @@ import requests
 import sys
 
 
-url = sys.argv[1]
-email = sys.argv[2]
-req = requests.post(url, data={'url': url, 'email': email})
-print(f"{req.text}")
+if __name__ == "__main__":
+    url = sys.argv[1]
+    email = sys.argv[2]
+    req = requests.post(url, data={'url': url, 'email': email})
+    print(f"{req.text}")
