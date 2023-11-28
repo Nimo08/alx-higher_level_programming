@@ -12,9 +12,9 @@ request.get(url, { encoding: 'utf8' }, (error, response, body) => {
   // write body to file
   fs.writeFile(filePath, body, 'utf8', err => {
     if (err) {
-      console.error(error);
+      console.error(err);
       return;
     }
-    console.log('{filePath}');
+    console.log(`${filePath}`);
   });
 });
