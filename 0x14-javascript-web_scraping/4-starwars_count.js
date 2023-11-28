@@ -10,7 +10,7 @@ request(url, { json: true }, (error, response, body) => {
   }
 
   let movieNum = 0;
-  body.data.forEach(movie => {
+  body.results.forEach(movie => {
     movie.characters.forEach(characterUrl => {
       const matchId = characterUrl.match(/\/(\d+)\/$/);
       if (matchId && matchId[1] === characterId) {
