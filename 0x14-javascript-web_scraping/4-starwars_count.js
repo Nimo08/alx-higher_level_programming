@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
-const url = 'https://swapi-api.alx-tools.com/api/films/';
 const characterId = '18';
+const url = process.argv[2];
 
 request(url, { json: true }, (error, response, body) => {
   if (error) {
@@ -10,7 +10,7 @@ request(url, { json: true }, (error, response, body) => {
   }
 
   let movieNum = 0;
-  body.results.forEach(movie => {
+  body.data.forEach(movie => {
     movie.characters.forEach(characterUrl => {
       const matchId = characterUrl.match(/\/(\d+)\/$/);
       if (matchId && matchId[1] === characterId) {
