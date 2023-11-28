@@ -6,8 +6,13 @@ request(url, { json: true }, (error, response, body) => {
     console.error(error);
     return;
   }
-  const movieNum = body.results.filter(movie =>
-    movie.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')
-  );
+  const characterId = '18';
+  const movieNum = body.results.filter(movie => {
+    const characterIds = movie.characters.map(characterUrl => {
+      const matchId = characterUrl.match(/\/(\d+)\/$/);
+      return matchId ? matchId[1] : null;
+    });
+    return characterIds.includes(characterId);
+  });
   console.log(`${movieNum.length}`);
 });
