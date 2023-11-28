@@ -1,18 +1,20 @@
 #!/usr/bin/node
 const request = require('request');
 const url = process.argv[2];
-request(url, { json: true }, (error, response, body) => {
+request.get(url, { json: true }, (error, response, body) => {
   if (error) {
     console.error(error);
     return;
   }
-  const completeTasksUser = {};
   const completeTasks = body.filter(task => task.completed);
+  const taskCount = new Map();
   completeTasks.forEach(task => {
     const userId = task.userId;
-    completeTasksUser[userId] = (completeTasksUser[userId] || 0) + 1;
+    taskCount.set(userId, (taskCount.get(userId) || 0) + 1);
   });
-  Object.keys(completeTasksUser).forEach(userId => {
-    console.log(`${userId}: ${completeTasksUser[userId]}`);
+  taskCount.forEach((count, userId) => {
+    const res = {};
+    res[userId] = count;
+    console.log(res);
   });
 });
