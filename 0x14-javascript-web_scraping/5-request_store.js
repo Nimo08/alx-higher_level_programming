@@ -13,8 +13,6 @@ request.get(url, { encoding: 'utf8' }, (error, response, body) => {
   fs.writeFile(filePath, body, 'utf8', err => {
     if (err) {
       console.error(err);
-      return;
     }
-    console.log(`${filePath}`);
   });
 });
